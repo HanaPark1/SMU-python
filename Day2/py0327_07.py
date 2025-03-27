@@ -12,3 +12,17 @@ print(now.day)
 print(now.hour)
 print(now.minute)
 print(now.second)
+
+# 시간이 12 이상이면 오후, 12 미만이면 오전이라고 하고 시간을 출력하시오
+# 13시 -> 오후 1시
+# 9시 -> 오전 9시
+
+if now.hour >= 12:
+    if now.hour == 12:
+        print("현재는 오후 12시입니다")
+    else:
+        print("현재는 오후 {:02d}시 {:02d}분입니다".format((now.hour)-12, now.minute))
+else:
+    print("현재는 오전 {:02d}시 {:02d}분입니다".format(now.hour, now.minute))
+    
+print("{}년 {:02d}월 {:02d}일입니다.".format(now.year, now.month, now.day))
