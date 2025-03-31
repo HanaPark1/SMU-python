@@ -117,3 +117,56 @@ print(a_list[::-1])
 # 값을 변경할 때 1:2, 2의 위치값이 포함
 a_list[1:2] = [100,200]
 print(a_list)
+
+# 2차원 리스트
+aa = [
+    [1,2,3,4], #[0][0], [0][1], [0][2]...
+    [5,6,7,8],
+    [9,10,11,12]
+]
+
+
+for i in range(3):
+    for j in range(4):
+        print(aa[i][j],end=" ")
+        
+
+
+# 1 2 3 4 5
+# 6 7 8 9 10 ... 출력
+
+# a = [i+1 for i in range(25)]
+# [1,2,3,4,...,23,24,25]
+
+
+# a = [[0]*5]*5 # 얕은 복사
+a = [[0]*5 for i in range(5)] # 깊은 복사
+
+
+for i in range(5):
+    for j in range(5):
+        a[i][j] = 5*i+(j+1)
+        
+print(a)
+
+sample_list = [i+1 for i in range(25)]
+random.shuffle(sample_list)
+
+a = [[0]*5 for i in range(5)] # 깊은 복사
+
+
+for i in range(5):
+    for j in range(5):
+        a[i][j] = sample_list[5*i+j] # 0,1,2,3,4,5,...,23,24
+        
+print(a)
+
+sample_list = list()
+for i in range(5):
+    temp = []
+    for j in range(5):
+        temp.append(0)
+    sample_list.append(temp)
+    
+# 5 * 5 리스트 0으로 초기화
+sample_list = [[0]*5 for i in range(5)]
