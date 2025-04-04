@@ -46,14 +46,22 @@ while True:
     
     if choice == 1:
         print("[ 로또 번호 입력 ]")
-        for i in range(6):
-            print_sample()
-            num = int(input("원하는 로또 번호를 입력하세요: "))
-            if 0 > num or num > 45:
-                print(f"{num}은 로또 번호가 아닙니다. 다시 입력하세요")
-                continue
-            input_lotto.append(num)
-            print_sample_lotto[num-1] = "X"
+        count = 0
+        while True:
+            if count < 6:
+                print_sample()
+                num = int(input("원하는 로또 번호를 입력하세요: "))
+                if 0 > num or num > 45:
+                    print(f"{num}은 로또 번호가 아닙니다. 다시 입력하세요")
+                    continue
+                if i not in print_sample_lotto:
+                    print("이미 등록된 번호입니다. 다시 입력하세요.")
+                    continue
+                input_lotto.append(num)
+                print_sample_lotto[num-1] = "X"
+                count += 1
+            else: 
+                break
         print()
         
     elif choice == 2:
