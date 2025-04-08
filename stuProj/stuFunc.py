@@ -12,6 +12,7 @@ def tmenu_print():
     print("-"*50)
     print("1. 학생 성적 입력")
     print("2. 학생 성적 출력")
+    print("3. 학생 성적 수정")
     choice = 0
     
     try:
@@ -30,5 +31,10 @@ def stu_input():
     print(f"{name} 학생이 등록되었습니다.")
     print()
     
-print("{},{},{},{},{},{},{},{},".format(*title))
-print("-"*60)
+def stu_ouput():
+    print("[ 학생 성적 출력 ]")
+    print("-"*60)
+    print("{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t".format(*title))
+    print("-"*60)
+    for s in students.students:
+        print(f"{s.no}\t{s.name}\t{s.kor}\t{s.eng}\t{s.math}\t{s.total}\t{s.avg}\t{s.rank}\t")
